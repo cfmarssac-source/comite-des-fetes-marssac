@@ -66,3 +66,4 @@ display:inline-block;
 @media(max-width:600px){
 .about-grid{grid-template-columns:1fr}
 }
+.news-image{width:100%;height:auto;display:block;border-radius:14px;margin-bottom:20px}
