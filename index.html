@@ -213,27 +213,76 @@ Pour plus de renseignements, vous pouvez contacter <b>Christian Mallol</b>.
 
   <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:15px;">
 
-    <img
-    src="images/images/saint-quil/2026 Vide Grenier St QUIL (1).jpg"
-    alt="Vide-grenier de la Saint-Quil 2026"
-    style="width:100%; height:250px; object-fit:cover; border-radius:12px; cursor:zoom-in;"
-    onclick="agrandirPhoto(this.src)"
+   <!-- Photo 1 -->
+<img
+  src="images/images/saint-quil/2026 Vide Grenier St QUIL (1).jpg"
+  alt="Vide-grenier de la Saint-Quil 2026"
+  style="width:100%; height:250px; object-fit:cover; border-radius:12px; cursor:zoom-in;"
+  onclick="agrandirPhoto(this.src)"
 >
 
+<!-- Photo 2 -->
 <img
-    src="images/images/saint-quil/2026 Vide Grenier St QUIL (2).jpg"
-    alt="Vide-grenier de la Saint-Quil 2026"
-    style="width:100%; height:250px; object-fit:cover; border-radius:12px; cursor:zoom-in;"
-    onclick="agrandirPhoto(this.src)"
+  src="images/images/saint-quil/2026 Vide Grenier St QUIL (2).jpg"
+  alt="Vide-grenier de la Saint-Quil 2026"
+  style="width:100%; height:250px; object-fit:cover; border-radius:12px; cursor:zoom-in;"
+  onclick="agrandirPhoto(this.src)"
 >
 
+<!-- Photo 3 -->
 <img
-    src="images/images/saint-quil/2026 Vide Grenier St QUIL (3).jpg"
-    alt="Vide-grenier de la Saint-Quil 2026"
-    style="width:100%; height:250px; object-fit:cover; border-radius:12px; cursor:zoom-in;"
-    onclick="agrandirPhoto(this.src)"
+  src="images/images/saint-quil/2026 Vide Grenier St QUIL (3).jpg"
+  alt="Vide-grenier de la Saint-Quil 2026"
+  style="width:100%; height:250px; object-fit:cover; border-radius:12px; cursor:zoom-in;"
+  onclick="agrandirPhoto(this.src)"
 >
   </div>
+
+
+<!-- Fenêtre d'affichage des photos agrandies -->
+<div id="photo-agrandie"
+     onclick="fermerPhoto()"
+     style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.92); justify-content:center; align-items:center; cursor:zoom-out;">
+
+  <span style="position:absolute; top:20px; right:35px; color:white; font-size:45px; cursor:pointer;">&times;</span>
+
+  <img id="image-grand"
+       onclick="event.stopPropagation()"
+       style="max-width:95%; max-height:90%; object-fit:contain; border-radius:8px;">
+</div>
+
+<script>
+(function() {
+
+  function activerPhotos() {
+    var photos = document.querySelectorAll(".saint-quil-album img");
+    var fenetre = document.getElementById("photo-agrandie");
+    var imageGrande = document.getElementById("image-grand");
+
+    if (!fenetre || !imageGrande || photos.length === 0) {
+      return;
+    }
+
+    photos.forEach(function(photo) {
+      photo.style.cursor = "zoom-in";
+
+      photo.onclick = function() {
+        imageGrande.src = this.src;
+        fenetre.style.display = "flex";
+      };
+    });
+
+    fenetre.onclick = function() {
+      fenetre.style.display = "none";
+    };
+  }
+
+  activerPhotos();
+
+})();
+</script>
+
+</div></section>
 </div></section>
 
 <section id="inscriptions" class="section alt">
