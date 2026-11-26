@@ -67,3 +67,29 @@ display:inline-block;
 .about-grid{grid-template-columns:1fr}
 }
 .news-image{width:100%;height:auto;display:block;border-radius:14px;margin-bottom:20px}
+/* CORRECTION AFFICHAGE DU SITE */
+body {
+  margin: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1160px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.news-grid,
+.event-grid,
+.calendar,
+.gallery,
+.forms,
+.about {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
